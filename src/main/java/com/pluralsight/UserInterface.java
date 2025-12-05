@@ -18,7 +18,7 @@ public class UserInterface {
     private DealerShip dealerShip;
     private Scanner scanner = new Scanner(System.in);
 
-    private DataManager dataManager = null;
+    private DataManager dataManager;
 
     private boolean isRunning = true;
 
@@ -27,9 +27,9 @@ public class UserInterface {
     }
 
     private void init(MysqlDataSource dataSource) throws IOException {
-        DealershipFileManager dfm = new DealershipFileManager();
-        this.dealerShip = dfm.getDealership();
+        dataManager = new DataManager();
         dataManager.setMysqlDataSource(dataSource);
+        this.dealerShip = dataManager.getDealership();
     }
 
     public void display(MysqlDataSource dataSource) {
