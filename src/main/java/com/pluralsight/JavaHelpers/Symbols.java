@@ -1,4 +1,4 @@
-package com.yearup.JavaHelpers;
+package com.pluralsight.JavaHelpers;
 
 public class Symbols {
     public static final String SPADES = "\u2660";

@@ -1,4 +1,4 @@
-package com.yearup;
+package com.pluralsight;
 
 public class Vehicle {
 

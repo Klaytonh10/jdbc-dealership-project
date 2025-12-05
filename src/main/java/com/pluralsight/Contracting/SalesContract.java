@@ -1,6 +1,6 @@
-package com.yearup.Contracting;
+package com.pluralsight.Contracting;
 
-import com.yearup.Vehicle;
+import com.pluralsight.Vehicle;
 
 public class SalesContract extends Contract {
 

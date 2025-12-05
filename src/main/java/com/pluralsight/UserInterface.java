@@ -1,8 +1,9 @@
-package com.yearup;
+package com.pluralsight;
 
-import com.yearup.Contracting.Contract;
-import com.yearup.Contracting.ContractFileManager;
-import com.yearup.Contracting.LeaseContract;
+import com.mysql.cj.jdbc.MysqlDataSource;
+import com.pluralsight.Contracting.Contract;
+import com.pluralsight.Contracting.ContractFileManager;
+import com.pluralsight.Contracting.LeaseContract;
 
 import java.io.IOException;
 import java.text.DecimalFormat;
@@ -17,20 +18,23 @@ public class UserInterface {
     private DealerShip dealerShip;
     private Scanner scanner = new Scanner(System.in);
 
+    private DataManager dataManager = null;
+
     private boolean isRunning = true;
 
     public UserInterface() {
 
     }
 
-    private void init() throws IOException {
+    private void init(MysqlDataSource dataSource) throws IOException {
         DealershipFileManager dfm = new DealershipFileManager();
         this.dealerShip = dfm.getDealership();
+        dataManager.setMysqlDataSource(dataSource);
     }
 
-    public void display() {
+    public void display(MysqlDataSource dataSource) {
         try {
-            init();
+            init(dataSource);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

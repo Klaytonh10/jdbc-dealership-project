@@ -1,7 +1,6 @@
-package com.yearup;
+package com.pluralsight;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.List;
 
 public class DealershipFileManager {
